@@ -1,0 +1,13 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+.wrapperChat{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    background-color: antiquewhite;
+    overflow-y: scroll;
+
+}
