@@ -51,6 +51,7 @@ const Dashboard = (props) => {
 
     
 
+
     useEffect(()=>{
         getData()
         .then((data)=>{
@@ -64,8 +65,22 @@ const Dashboard = (props) => {
                 type: ACTIONS.ERROR_DATA_ACCESS,
                 error,
             })
-        })
+        });
+        
+           scroll();
+        
     },[])
+
+    const scroll = () =>{
+        const chat = document.getElementById('chat')
+            console.dir(chat);
+            
+        chat.scrollTo({ 
+          top: chat.scrollHeight,
+          block: 'start',
+          behavior: 'smooth'
+        })
+    }
 
     
     function addMessage(text){
@@ -83,7 +98,7 @@ const Dashboard = (props) => {
         <UserContext.Provider value={user}>
         <main className={styles.wrapper}>
             <DialogList/>
-            <section className={styles.wrapperChat}>
+            <section className={styles.wrapperChat} id='chat'>
             <Chat chatState={chatState.messages}/>
             <TextArea addMessage={addMessage}/>
             </section>

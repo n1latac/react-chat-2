@@ -1,7 +1,8 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ChatItems from './ChatItems';
 
 const Chat = (props) => {
+    
     
     
     const messageArray = props.chatState.map((msg)=>{

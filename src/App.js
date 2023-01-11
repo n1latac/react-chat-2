@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Dashboard from "./components/Dashboard";
 
 function App() {
+ 
   return (
    <Dashboard/>
   );
